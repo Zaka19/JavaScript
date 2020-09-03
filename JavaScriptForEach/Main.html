@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabajo</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let Retornar = {};
+
+function vocales(palabra){
+    palabra = palabra.toLowerCase();
+
+    palabra.split("").forEach((valueP,index, array) => {
+        "aeiou".split("").forEach((value)=>{
+            if(valueP == value){if(!Retornar[value]){Retornar[value] = 1;}else{Retornar[value]++;}}
+        });
+    });
+    Retornar = sortObject(Retornar);
+    console.log(Retornar);
+}
+
+function sortObject(obj) {
+    var arr = [];
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            arr.push({
+                'key': prop,
+                'value': obj[prop]
+            });
+        }
+    }
+    console.log(arr);
+    
+    arr.sort(function(a, b) { return a.key.charCodeAt(0) - b.key.charCodeAt(0); });
+    
+    console.log(arr);
+    let newObj = {}
+    arr.forEach((x) => newObj[x.key] = x.value);
+    //arr.sort(function(a, b) { a.value.toLowerCase().localeCompare(b.value.toLowerCase()); }); //use this to sort as strings
+    return newObj; // returns array
+}
+
+function InvertirPalabra(palabra){
+    let arrayPalabras = [];
+    let tornar = "";
+
+    palabra.split(" ").forEach((value,index,array) => {
+        arrayPalabras.push(value);
+    });
+    
+    let copia = arrayPalabras.map(function(string){
+        var x = string.length;
+        var cadenaInvertida = "";
+        while (x>=0) {
+            cadenaInvertida = cadenaInvertida + string.charAt(x);
+            x--;
+        }
+        return cadenaInvertida;
+    });
+    console.log(copia);
+
+    copia.forEach((value)=>{
+        tornar += " " + value;
+    });
+    console.log(tornar);
+}
+
+function Invertir(array){
+    array.forEach((value,index, array) => {
+        
+    });
+    return array;
+}
+ 
+function hola(palabra,numero){
+   return palabra.split(" ").filter(pala => pala.length > numero).join(" ");
+}
+</script>
+</html>

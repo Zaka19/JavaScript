@@ -1,0 +1,82 @@
+#Tablero{
+    border: 2px groove green;
+    height: 1000px;
+    border-radius: 5px;
+    background-color: lawngreen;
+}
+
+
+#Jugador1{
+    float: left;
+    margin:40px;
+}
+
+#Jugador2{
+    float: right;
+    margin:40px;
+}
+
+#Jugador3{
+    float: left;
+    margin:40px;
+}
+
+#Jugador4{
+    float: right;
+    margin:40px;
+}
+
+.Jugador{
+    border: 2px groove blue;
+    width: 35%;
+    border-radius: 5px;
+    margin: 50px;
+    background-color: lightblue;
+}
+
+#person{
+    margin: 20px;
+    text-align: center;
+}
+
+#mazo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#Botones{
+    margin:30px;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: cadetblue;
+    font-weight: bold;
+    border:2px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button:active{
+    transition: 2 ease-out 1s;
+}
+
+
+.imagencarta{
+    width: 100px;
+    height: 150px;
+}
+
+p{
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

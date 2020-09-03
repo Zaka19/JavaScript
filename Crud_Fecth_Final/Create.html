@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crear</h1>
+    <a href="index.html"><button id="Return">Volver</button></a>
+    <br><br>
+    <span>Servicio:</span><br>
+    <input type="text" id="Servicio"/><br><br>
+    <span>Precio:</span><br>
+    <input type="number" id="Precio"/><br><br>
+    <span>Hoja de Servicio ID:</span><br>
+    <input type="number" id="HDS"/><br><br>
+    <button id="Create">Crear</button><br><br>
+    <p id="res"></p>
+    <h1>Hoja de servicios:</h1>
+    <table id="table" class="table">
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Descripcion</th>
+            <th>Precio total</th>
+        </tr>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+</body>
+<script type="module" src="CreateShow.js"></script>
+</html>

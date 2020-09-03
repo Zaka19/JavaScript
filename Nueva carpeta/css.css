@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    background-color: darkkhaki;
+}
+
+h1{
+    margin-bottom:5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:blue;
+    text-shadow:2px 2px cornflowerblue;
+}
+
+p{
+    font-family: monospace;
+    color: white;
+}

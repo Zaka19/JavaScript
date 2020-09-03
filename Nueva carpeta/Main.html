@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <div id="Container">
+        <h1>Formulario</h1>
+        <form>
+            <p><b>Tarea: </b></p>
+            <input id="tarea" name="tarea" type="text" />
+            <p><b>Prioridad: </b></p>
+            <select id="Prioridad">
+                <option value="Urgente">Urgente</option> 
+                <option value="Normal">Normal</option> 
+                <option value="Pasando_del_tema">Prioridad del tema</option>
+            </select>
+            <p><b>Fecha de vecimiento: </b></p>
+            <input id="fecha" type="date" />
+            <p><input type="button" value="Agregar" id="add" /></p>
+        </form>
+        <ul id="Lista"></ul>
+    </div>
+</body>
+<script>
+    
+    let comercial = [];
+    let sum;
+
+    let save = document.getElementById("add");
+    save.addEventListener("click",add);
+
+    init();
+
+    function add(){
+       let person = {
+            Tarea: getValor("tarea"),
+            Prioridad: getValor("Prioridad"),
+            Fecha: getValor("fecha")
+        }
+
+        comercial.push(person);
+        setLocalStore();
+        createList();
+    }
+
+    function createList(){
+        document.getElementById("Lista").innerHTML = "";
+        for(let a = 0;a < comercial.length;a++){
+            let li = document.createElement('li');
+            let del = document.createElement('button');
+            del.id = a;
+            del.innerText = "Borrar";
+            li.appendChild(document.createTextNode(comercial[a].Tarea + " - " + comercial[a].Prioridad + " - " + comercial[a].Fecha));
+            li.appendChild(del);
+            document.getElementById("Lista").appendChild(li);
+            del.addEventListener("click",function(){Delete(a)});
+        }
+    }
+
+    function Delete(id){
+        comercial.splice(id,1);
+        setLocalStore();
+        createList();
+    }
+
+    function getValor(nombreId){
+        return document.getElementById(nombreId).value;
+    }
+
+    function setLocalStore(){
+        localStorage.arrayPersons = JSON.stringify(comercial);
+    }
+
+    function init(){
+        if(localStorage.arrayPersons!=null){
+            comercial = JSON.parse(localStorage.arrayPersons);
+            createList();
+        }
+    }
+
+</script>
+</html>

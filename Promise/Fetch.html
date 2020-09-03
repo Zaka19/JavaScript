@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch</title>
+</head>
+
+<body>
+        <button id=boto>COMENÇAR</button>
+        <p id="p0"></p>
+        <img id="img0" alt="">
+        <p id="p1"></p>
+        <img id="img1" alt="">
+        <p id="p2"></p>
+        <img id="img2" alt="">
+</body>
+
+<script>
+    document.getElementById("boto").addEventListener("click",init);
+    function init(){
+     fetch('https://randomuser.me/api/?results=3')
+     .then(response => response.json())
+        .then(data => controler(data))
+        .catch(function (err) {
+            console.log('Fetch Error :-S', err);
+        });
+    }
+
+        function controler(data){
+        let count=1;
+        console.log(data);
+        data.results.forEach(element => {
+            document.getElementById("p"+count).innerText=element.name.first;
+            document.getElementById("img"+count).src=element.picture.medium;
+            count++;
+        });
+    }
+</script>
+
+</html>
